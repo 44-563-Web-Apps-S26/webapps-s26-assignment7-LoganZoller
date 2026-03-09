@@ -118,28 +118,28 @@
         locationsVisited++
 
         if (position == statueLocation) {
-            image.src = "Images\statue.jpg"
+            image.src = "Images/statue.jpg"
             gameOver = true
             score -= 3
-            image.onClick = null
+            image.onclick = null
         }
 
         else if (position == toucanLocation) {
-            image.src = "Images\toucan.jpg"
+            image.src = "Images/toucan.jpg"
             score += 5
-            image.onClick = null
+            image.onclick = null
         }
 
         else if (lorikeetLocations.includes(position)) {
-            image.src = "Images\lorikeet.jpg"
+            image.src = "Images/lorikeet.jpg"
             score += 3
-            image.onClick = null
+            image.onclick = null
         }
 
         else if (buntingLocations.includes(position)) {
-            image.src = "Images\bunting.jpg"
+            image.src = "Images/bunting.jpg"
             score += 1
-            image.onClick = null
+            image.onclick = null
         }
         
         lastLocation = position
