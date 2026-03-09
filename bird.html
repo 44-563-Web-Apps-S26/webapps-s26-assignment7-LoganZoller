@@ -101,7 +101,7 @@
     let score = 0
     let locationsVisited = 0
     let lastLocation = 0
-    let statueLoction = 19
+    let statueLocation = 19
     let toucanLocation = 14
     let lorikeetLocations = [3, 25]
     let buntingLocations = [2, 5, 11, 20, 21]
@@ -113,38 +113,38 @@
         }
 
         let id = ids[position]
-        let image = document.getElementById("id")
+        let image = document.getElementById(id)
         
         locationsVisited++
 
-        if (position = statueLocation) {
+        if (position == statueLocation) {
             image.src = "C:\Users\s559751\OneDrive - nwmissouri.edu\Classes\Web App Development\Images\statue.jpg"
             gameOver = true
             score -= 3
-            image.onClick() = null
+            image.onClick = null
         }
 
-        else if (position = toucanLocation) {
+        else if (position == toucanLocation) {
             image.src = "C:\Users\s559751\OneDrive - nwmissouri.edu\Classes\Web App Development\Images\toucan.jpg"
             score += 5
-            image.onClick() = null
+            image.onClick = null
         }
 
-        else if (position = lorikeetLocation) {
+        else if (lorikeetLocations.includes(position)) {
             image.src = "C:\Users\s559751\OneDrive - nwmissouri.edu\Classes\Web App Development\Images\lorikeet.jpg"
             score += 3
-            image.onClick() = null
+            image.onClick = null
         }
 
-        else if (position = buntingLocations) {
+        else if (buntingLocations.includes(position)) {
             image.src = "C:\Users\s559751\OneDrive - nwmissouri.edu\Classes\Web App Development\Images\bunting.jpg"
             score += 1
-            image.onClick() = null
+            image.onClick = null
         }
         
-        else {
-            image.src = "C:\Users\s559751\OneDrive - nwmissouri.edu\Classes\Web App Development\Images\Bush.jpg"
-        }
+        lastLocation = position
+        document.getElementById("score").innerHTML = "Score is " + score
+        document.getElementById("locations").innerHTML = "Number of locations checked is " + locationsVisited
     }
 
     function help() {
@@ -177,13 +177,13 @@
             leftSide, rightSide, bottomLeftDiagonal, bottom, bottomRightDiagonal]
         
         for (let n of toucanNeighbors) {
-            if (toucanLocation.include(n)) {
+            if (toucanLocation == n) {
                 result = "caw"
             }
         }
 
         for (let n of toucanNeighbors) {
-            if (statueLocation.include(n)) {
+            if (statueLocation == n) {
                 result = "thrrum"
             }
         }
