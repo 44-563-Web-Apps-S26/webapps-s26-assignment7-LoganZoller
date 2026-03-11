@@ -18,7 +18,7 @@
     <div id="target">Your time</div>
     <div id="counter">Count</div>
 
-    <button id="go" type="button">Go</button>
+    <button id="go" type="button" onclick="beginTime()">Go</button>
     <button id="halt" type="button" onclick="recordTime()">Halt</button>
 
   
@@ -32,6 +32,14 @@
     }
     
     document.GetElementById("target").onclick = recordTime
+
+    function beginTime() {
+        for (let i = 0; i < 6; i++) {
+            setTimeout(function() {
+                document.getElementById("counter").innerHTML = i
+            }, i * 1000)
+        }
+    }
 
 </script>
 
